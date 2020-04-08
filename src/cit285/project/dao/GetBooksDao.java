@@ -123,7 +123,7 @@ public class GetBooksDao {
 		
 		// Connect to the database
 		Connection connection = DriverManager
-				.getConnection("jdbc:mysql://localhost/book_store", "root", "Popeyes chicken sandwich");
+				.getConnection("jdbc:mysql://localhost/book_store?useTimezone=true&serverTimezone=UTC", "root", "Popeyes chicken sandwich");
 		
 		return connection;
 	}

@@ -15,7 +15,7 @@ public class AddBookDao {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/book_store", "root", "Popeyes chicken sandwich"); 
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/book_store?useTimezone=true&serverTimezone=UTC", "root", "Popeyes chicken sandwich"); 
 			pstB = con.prepareStatement("insert into book(AuthorFirstName, AuthorLastName, "
 					+ "ISBN, Title, Editor, Edition, Year, Price) values(?,?,?,?,?,?,?,?)");
 		} catch (Exception ex) {

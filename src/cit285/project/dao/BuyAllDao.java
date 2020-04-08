@@ -23,7 +23,7 @@ public class BuyAllDao {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/book_store", "root", "Popeyes chicken sandwich"); 
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/book_store?useTimezone=true&serverTimezone=UTC", "root", "Popeyes chicken sandwich"); 
 			pstU = con.prepareStatement("insert into invoice(UserID, TotalAmount, IsProcessed) values(?,?,?)");
 		} catch (Exception ex) {
 			System.out.print("Error" + ex);

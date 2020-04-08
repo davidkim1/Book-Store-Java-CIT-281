@@ -15,7 +15,7 @@ public class DeleteBookDao {
 			try {
 				
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				Connection con = DriverManager.getConnection("jdbc:mysql://localhost/book_store", "root", "Popeyes chicken sandwich"); 
+				Connection con = DriverManager.getConnection("jdbc:mysql://localhost/book_store?useTimezone=true&serverTimezone=UTC", "root", "Popeyes chicken sandwich"); 
 				pstB = con.prepareStatement("delete from book where BookID = " + book.getBookId());
 				pstB.executeUpdate();
 				//st.setString(1, title);
